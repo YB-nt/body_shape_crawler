@@ -1,6 +1,6 @@
 # load_body_shape
 
-##OPTION
+## OPTION
 - height
 - weight
 - chest
@@ -10,7 +10,7 @@
 - exercise
 
 
-##USE
+## USE
 option select
 > python --height 158 --weight 50
 >./body_shape.png
