@@ -12,5 +12,5 @@
 
 ## USE
 option select
-> python --height 158 --weight 50
->./body_shape.png
+> python --height 158 --weight 50<br>
+> ./body_shape.png
