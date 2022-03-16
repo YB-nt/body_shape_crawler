@@ -24,7 +24,7 @@ def change_parm(type_xpath,monitor_path,check):
                 break
     else:
         return
-
+    print('out')
 
 
 opt = ParmOptions().parse()
@@ -34,7 +34,7 @@ options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) Apple
 options.add_argument("disable-gpu")
 options.add_argument('window-size=1920x1080')
 
-driver = webdriver.Chrome(ChromeDriverManager().install())#,options=options)
+driver = webdriver.Chrome(ChromeDriverManager().install(),options=options)
 url ='https://bodyvisualizer.com/'
 
 
@@ -65,10 +65,12 @@ change_parm(height[0],height[1],opt.height)
 change_parm(weight[0],weight[1],opt.weight)
 change_parm(chest[0],chest[1],opt.chest)
 change_parm(waist[0],waist[1],opt.waist)
+change_parm(hips[0],hips[1],opt.hips)
 change_parm(inseam[0],inseam[1],opt.inseam)
-change_parm(inseam[0],inseam[1],opt.height)
 change_parm(exercise[0],exercise[1],opt.exercise)
 
 print("screenshot")
 ### image save
 driver.find_element_by_xpath(body_shape).screenshot('./body_shape.png')
+
+driver.quit()
