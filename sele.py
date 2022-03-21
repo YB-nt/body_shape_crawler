@@ -33,8 +33,11 @@ options.add_argument('headless')
 options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 Edg/98.0.1108.56")
 options.add_argument("disable-gpu")
 options.add_argument('window-size=1920x1080')
+options.add_argument('--no-sandbox')
+options.add_argument('--disable-dev-shm-usage')
 
 driver = webdriver.Chrome(ChromeDriverManager().install(),options=options)
+driver.
 url ='https://bodyvisualizer.com/'
 
 
@@ -71,6 +74,9 @@ change_parm(exercise[0],exercise[1],opt.exercise)
 
 print("screenshot")
 ### image save
-driver.find_element_by_xpath(body_shape).screenshot('./body_shape.png')
+body_shape=driver.find_element_by_xpath(body_shape)
+body_shape.screenshot('./body_shape.png')
+with open(r"canvas.obj", 'wb') as f:
+    f.write(body_shape)
 
 driver.quit()
