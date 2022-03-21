@@ -37,7 +37,7 @@ options.add_argument('--no-sandbox')
 options.add_argument('--disable-dev-shm-usage')
 
 driver = webdriver.Chrome(ChromeDriverManager().install(),options=options)
-driver.
+
 url ='https://bodyvisualizer.com/'
 
 
