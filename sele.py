@@ -35,8 +35,10 @@ options.add_argument("disable-gpu")
 options.add_argument('window-size=1920x1080')
 options.add_argument('--no-sandbox')
 options.add_argument('--disable-dev-shm-usage')
-
-driver = webdriver.Chrome(ChromeDriverManager().install(),options=options)
+try:
+    driver = webdriver.Chrome(ChromeDriverManager().install(),options=options)
+except:
+    driver = webdriver.Chrome('chromedriver',options=options)
 
 url ='https://bodyvisualizer.com/'
 
